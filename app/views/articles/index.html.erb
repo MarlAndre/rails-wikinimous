@@ -1,12 +1,17 @@
-<h1>My articles</h1>
-<ul>
-  <% @articles.each do |article| %>
-  <li>
-      <%= link_to article_path(article) do %>
-        <%= article.title.capitalize %>
-      <% end %>
-  </li>
-  <% end %>
-</ul>
-
-<%= link_to 'Add a new article', new_path %>
+ <body>
+   <div class="navbar">
+    <h3>Wikinimous</h3>
+    <h3><%= link_to 'Add a new article', new_path %></h3>
+  </div>
+  <div class="container">
+      <ul class="articles">
+       <a href="#"><% @articles.each do |article| %></a>
+        <li class="article-list">
+            <%= link_to article_path(article) do %>
+              <h2><%= article.title.capitalize %></h2>
+            <% end %>
+        </li>
+        <% end %>
+      </ul>
+  </div>
+ </body>
